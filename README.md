@@ -2,7 +2,7 @@ zotero-slack
 ============
 
 ### Description:
-Use Slack to see whenever someone adds a paper to your Zotero group library
+Use Slack to get notified of new papers added to your Zotero group library, and who added them
 
 ### Details:
 
@@ -32,6 +32,6 @@ Quick HOWTO to organize:
 #### The Slack side:
 
 - Add an "Incoming Webhook" integration, copy the webhook URL (scroll down a bit to see it), and save the settings.
-- Add your copied webhook URL to the `slack-zotero-send.sh` program. Modify other values as needed.
+- Add your copied webhook URL to the `slack-zotero-send.sh` program. Modify other values as desired (you don’t need to use the cow icon, for instance).
 - Run `slack-zotero-send.sh` in the background
 - Enjoy being informed each time a paper is added and see who it's added by.
