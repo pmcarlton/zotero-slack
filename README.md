@@ -25,7 +25,7 @@ Quick HOWTO to organize:
 - install `feedstail` using `pip` (see [here](https://github.com/pmcarlton/pubmed-rss-twitter) for instructions) on the computer that will constantly monitor your Zotero library and send notifications to Slack. This should be a computer that's always on, or a cloud server, etc.
 - **AFTER** completing the Slack side (below), run `feedstail` in the background so it fetches the RSS feed every few minutes, for example:
 
-`nohup feedstail -e -r -f {title}__{author}__{link} -u "https://api.zotero.org/groups/YOURGROUPID/items/top?start=0&limit=25&key=YOURKEY" | perl -pe 'BEGIN{$|=1;} s/__/ — /g;s/$/\n/' | ./slack-zotero-send.sh &`
+`nohup feedstail -e -r -f '{title}__{author}__{link}' -u "https://api.zotero.org/groups/YOURGROUPID/items/top?start=0&limit=25&key=YOURKEY" | perl -pe 'BEGIN{$|=1;} s/__/ — /g;s/$/\n/' | ./slack-zotero-send.sh &`
 
   (Remember to replace YOURGROUPID and YOURKEY with your actual group ID number and key value. The interstitial perl code is just to make the formatting a bit nicer.)
 
